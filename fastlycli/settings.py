@@ -1,0 +1,1 @@
+URL_FORMAT = "https://api.fastly.com%s"
