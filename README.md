@@ -4,7 +4,17 @@ An unofficial cli package for managing VCL (Varnish Configuration Language) issu
 
 https://www.fastly.com/
 
-Usage: fastly-cli [OPTIONS] COMMAND [ARGS]...
+Installation
+============
 
-Options:
-  --help  Show this message and exit.
+Fastly-cli is published on `PyPI`__ and can be installed from there::
+
+   pip install fastly-cli
+
+Usage
+============
+
+   Usage: fastly-cli [OPTIONS] COMMAND [ARGS]...
+
+   Options:
+     --help  Show this message and exit.
