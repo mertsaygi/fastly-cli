@@ -11,7 +11,9 @@ setup(
     version="0.1.0",
     description="Universal command line interface for Fastly CDN",
     license="MIT",
+    url="https://github.com/mertsaygi/fastly-cli",
     author="Mert Saygı",
+    author_email="mertsaygi@gmail.com",
     packages=find_packages(),
     install_requires=[
         'Click',
