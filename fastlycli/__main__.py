@@ -10,9 +10,18 @@ def entry_point():
         raise Exception("FASTLY_AUTH_TOKEN is not exist in environment variables. Please define your token to your environment!")
 
 entry_point.add_command(vcl.upload_vcl)
+entry_point.add_command(vcl.set_as_main_vcl)
+entry_point.add_command(vcl.update_vcl)
 entry_point.add_command(vcl.get_all_vcls)
+entry_point.add_command(vcl.delete_vcl)
 
 entry_point.add_command(version.clone_version)
 entry_point.add_command(version.activate_version)
 entry_point.add_command(version.get_version)
 entry_point.add_command(version.get_all_versions)
+
+
+# Dynamic Servers
+# Pool
+
+# Server

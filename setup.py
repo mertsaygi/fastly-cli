@@ -8,7 +8,7 @@ except IOError:
 
 setup(
     name="fastly-cli",
-    version="0.1.0",
+    version="0.1.1",
     description="Universal command line interface for Fastly CDN",
     license="MIT",
     url="https://github.com/mertsaygi/fastly-cli",
