@@ -13,6 +13,7 @@ def send_request(method, url, headers, body):
             req = requests.put(url, headers=headers, data=body)
     else:
         req = requests.delete(url, headers=headers)
+    if req.status_code > 400:
+        req.raise_for_status()
     print req.text
-    req.raise_for_status()
     return req

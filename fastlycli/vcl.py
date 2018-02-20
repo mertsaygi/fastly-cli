@@ -8,21 +8,12 @@ from helpers.helper import *
 @click.option('--version', required=True)
 @click.option('--name', required=True)
 @click.option('--file', required=True)
-@click.option('--override', is_flag=True)
-@click.option('--set_as_main', is_flag=True)
 @click.option('--token', envvar='FASTLY_AUTH_TOKEN')
-def upload_vcl(token, service, version, name, file, override=False, set_as_main=False):
+def upload_vcl(token, service, version, name, file):
     data = open(file, 'r').read()
     headers = {'Fastly-Key': token}
     payload = {'name': name, 'content': data}
-    if override:
-        send_request("PUT", URL_FORMAT % ("/service/%s/version/%s/vcl/%s" % (service, version, name)), headers,
-                            payload)
-    if set_as_main:
-        send_request("PUT", URL_FORMAT % ("/service/%s/version/%s/vcl/%s/main" % (service, version, name)),
-                            headers, None)
-    if not override and not set_as_main:
-        send_request("POST", URL_FORMAT % ("/service/%s/version/%s/vcl" % (service, version)), headers, payload)
+    return send_request("POST", URL_FORMAT % ("/service/%s/version/%s/vcl" % (service, version)), headers, payload)
 
 
 @click.command()
